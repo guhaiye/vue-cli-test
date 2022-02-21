@@ -1,24 +1,23 @@
-# vue-component
+# 公司内部脚手架
 
-## Project setup
-```
+> 基于Vue.js的单页面管理系统前端
+注意： /static/global/global.js 是对后端服务域名的配置
+      hasportal //true代表是集成portal,false是不集成
+      初始是false,代表位集成环境，将来集成环境需设置成true
+## 基础功能
+
+
+## 系统结构
+
+## 功能模块
+
+## Build Setup
+``` bash
+# install dependencies
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# serve with hot reload at localhost:3000
+npm run dev
 
-### Compiles and minifies for production
-```
+# build for production with minification
 npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

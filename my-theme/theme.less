@@ -1,0 +1,380 @@
+@import '~view-design/src/styles/index.less';
+//颜色转成rgba
+.colorToRGBA(@color,@alpha){ 
+    @myred:red(@color); 
+    @mygreen:green(@color); 
+    @myblue:blue(@color); 
+    box-shadow: 0 0 0 2px rgba(@myred,@mygreen,@myblue,@alpha); 
+} 
+.bagcolorToRGBA(@color,@alpha){
+    @myred:red(@color); 
+    @mygreen:green(@color); 
+    @myblue:blue(@color); 
+    background: rgba(@myred,@mygreen,@myblue,@alpha); 
+}
+.focusActive(@color){
+    &:active,&:focus{
+        border-color: @color;
+        .colorToRGBA(@color,0.1);
+    }
+}
+.menuhover(@primaryColor,@boxHoverColor){
+    color: @primaryColor;
+    background: @boxHoverColor !important;
+}
+.colorIconToRGBA(@color,@alpha){ 
+    @myred:red(@color); 
+    @mygreen:green(@color); 
+    @myblue:blue(@color); 
+    color: rgba(@myred,@mygreen,@myblue,@alpha); 
+} 
+.borderBottomToRGBA(@color,@alpha){ 
+    @myred:red(@color); 
+    @mygreen:green(@color); 
+    @myblue:blue(@color); 
+    border-bottom:1px solid rgba(@myred,@mygreen,@myblue,@alpha); 
+} 
+.theme(@primaryColor:#3E98F1,@activeColor:#388ADB,@focusColor:#65ADF4,@boxHoverColor:#F0F7FE,@menubag:#fff,@menubaghover:#F0F7FE,@menucolor:#1D293D,@menuSearchIconColor:#919aa6){
+    /*全局*/
+    a{
+        &:not(.dropdown-item):hover{color:@focusColor}
+        &:active{color:@activeColor}
+    }
+    /*面包屑*/
+    .ivu-breadcrumb{
+        a{
+         &:hover{color:@primaryColor}
+        }
+    }
+    /*input*/
+    .ivu-input:focus{
+        border-color: @primaryColor;
+        .colorToRGBA(@primaryColor,0.1);
+    }
+    .ivu-input:hover{
+        border-color: @primaryColor;
+    }
+
+    /*switch*/
+    .ivu-switch-checked{
+        background-color: @primaryColor;
+        border-color: @primaryColor;
+    }
+
+
+    /*button*/
+    .searchBtn{
+        background: @primaryColor;
+        .focusActive(@primaryColor)
+    }
+    
+    .searchresetBtn{
+        &:hover{border-color: @primaryColor;}
+        .focusActive(@primaryColor)
+    }
+    .btn-outline-info{border-color:@primaryColor !important;color:@primaryColor !important}
+    .btn-outline-info:hover,.btn-outline-info:active{background:@primaryColor !important;color:#fff !important}
+    .ivu-btn-primary{background-color: @primaryColor;border-color: @primaryColor;
+        .focusActive(@primaryColor)
+    }
+    .ivu-btn-default{
+        &:hover{border-color: @primaryColor;}
+        .focusActive(@primaryColor)
+    }
+    
+    /*radio*/
+    .ivu-radio-checked{
+        .ivu-radio-inner{
+            border-color: @primaryColor;
+            &:after{
+                background-color:@primaryColor;
+            }
+        }
+    }
+    /*table*/
+    .ivu-table-row-highlight td{background: @boxHoverColor;box-shadow: 0px -1px 0px 0px #ECEEF0;}
+    .ivu-table-row-highlight td,.ivu-table-stripe{
+        .ivu-table-body,.ivu-table-fixed-body{
+            tr.ivu-table-row-hover,tr.ivu-table-row-highlight.ivu-table-row-hover,tr.ivu-table-row-highlight:nth-child(2n) {
+              td{
+                background: @boxHoverColor;box-shadow: 0px -1px 0px 0px #ECEEF0;
+              }
+            }
+        }
+    }
+
+    /*page*/
+    .ivu-page.mini{
+        .ivu-page-prev, .ivu-page-next{ min-width: 32px; height: 32px; line-height: 32px;}
+        .ivu-page-item{
+            min-width: 32px; height: 32px; line-height: 32px;
+            &:hover{border:1px solid @primaryColor;color: @primaryColor;
+              a{color:@primaryColor}
+            }
+            a:hover{color:@primaryColor}
+        }
+        .ivu-page-item-active{
+            border: 1px solid @primaryColor !important;
+            background:@primaryColor;
+            &:hover,a:hover{color:#fff}
+        }
+        .ivu-page-options-elevator{
+            input:hover{
+                border-color: @primaryColor;
+            }
+            input:focus{
+                border-color: @primaryColor;
+                .colorToRGBA(@primaryColor,0.1);
+            }
+        }
+    }
+
+    /*select*/
+    .ivu-select-visible {
+        .ivu-select-selection{
+            border-color: @primaryColor;
+            .colorToRGBA(@primaryColor,0.1);
+        }
+    }
+    .ivu-select-item-selected, .ivu-select-item-selected:hover{
+        color: @primaryColor;
+    }
+    .ivu-select-item:hover,.ivu-select-item-focus{
+        background: @boxHoverColor;
+    }
+    
+    .ivu-select-selection:hover, .ivu-select-selection-focused{
+        border-color: @primaryColor;
+    }
+    .ivu-select-multiple{
+        .ivu-select-item-selected:after{color:@primaryColor}
+        .ivu-select-item-focus,.ivu-select-item-selected:hover{
+            background: @boxHoverColor;    
+        }
+    }
+
+    /*iview tree 选中*/
+    .ivu-checkbox-checked,.ivu-checkbox-indeterminate{
+        .ivu-checkbox-inner{
+            border-color: @primaryColor;
+            background-color: @primaryColor;
+        }
+    }
+    .ivu-checkbox-focus{
+        .colorToRGBA(@primaryColor,.1)
+    }
+    .bagcolor,.introdom:hover{background:@boxHoverColor}
+    .icontypecolor{color:@primaryColor;}
+    /*ztree*/
+    .ztree{
+      .curSelectedNode{
+            .node_name{
+                background-color: @boxHoverColor;
+                &:hover{
+                    background-color: @boxHoverColor;
+                }
+            }
+      }
+      li{
+        .node_name{
+            &:hover{
+                background-color: @boxHoverColor;
+            }
+        }
+        a{
+            &:hover,&.curSelectedNode{
+                background:@boxHoverColor
+            }
+        }
+      }
+    } 
+   .ivu-tree-title{
+        &:hover{background:@boxHoverColor}
+        &-selected{
+           &,&:hover{background:@boxHoverColor}
+        }
+    }
+    /*日期选择*/
+    .ivu-date-picker-focused input{
+        border-color: @primaryColor;
+        .colorToRGBA(@primaryColor,0.1);
+    }
+    .ivu-date-picker-cells-cell-today em:after{
+        background:@primaryColor;
+    }
+    .ivu-date-picker-cells-cell:hover em{
+        background: @boxHoverColor;
+    }
+    .ivu-date-picker-cells-focused em{
+        -webkit-box-shadow: 0 0 0 1px @primaryColor inset;
+        box-shadow: 0 0 0 1px @primaryColor inset;
+    }
+   .ivu-date-picker-cells-cell-selected{
+      em,&:hover em{
+        background:@primaryColor;
+        box-shadow: 0 0 0 1px @primaryColor inset;
+      }
+   }
+   .ivu-picker-panel-icon-btn:hover i{
+       color:@primaryColor
+   }
+   .ivu-date-picker-header-label:hover{
+       color:@primaryColor
+   }
+   .ivu-date-picker-cells-year .ivu-date-picker-cells-cell-focused, .ivu-date-picker-cells-month .ivu-date-picker-cells-cell-focused{
+       background-color:@boxHoverColor;
+   }
+
+    /*tab*/
+    .ivu-tabs-ink-bar{
+        background:@primaryColor;
+    }
+    .ivu-tabs-tab:hover{
+        background-color:@boxHoverColor;
+    }
+    /*tagsView*/
+    .tags-view-container{
+        .tags-view-wrapper{
+            .tags-view-item{
+                &.active{
+                    color:@primaryColor;
+                    .ivu-icon-ios-close{color:@primaryColor;}
+                }
+            }
+        }
+    }  
+    /*cascader*/
+    .ivu-cascader-menu{
+        .ivu-cascader-menu-item:hover{
+            background:@boxHoverColor;
+        }
+        .ivu-cascader-menu-item-active{
+            color:inherit;
+            background:@boxHoverColor;
+        }
+    }
+    /*主题切换*/
+    .theme-switch{
+        .theme-switch-list{
+            &>div{
+                &:hover,&.active{background:@boxHoverColor}
+            }
+        }
+    }
+    /*个人设置下拉*/
+    .dropdown-item:focus, .dropdown-item:hover,.dropdown-item:active{
+        background:@boxHoverColor
+    }
+    /*头像上传背景*/
+    // .demo-upload-list{background:@primaryColor;}
+    /*列表*/
+    .user-listcon,.userlistcon{
+        &> ul{
+            &> li{
+                background:@boxHoverColor;
+            }
+        }
+    }
+    .indicator-list, .role-list, .tenancy-list, .task-list,.user-listcon,.modeltreecon,.funcnodecon{
+        &> ul{
+          &> li{
+              &:hover,&.active{background:@boxHoverColor !important;}
+          }
+        }
+    }
+    .processConfig{
+        .activeli{background: @boxHoverColor;}
+        .p-center,.p-right{
+            ul{
+                li{
+                    &:hover{background: @boxHoverColor;}
+                }
+            }
+        }
+    }
+    /*timeline*/
+    .ivu-timeline{
+        &-item{
+            &-head{
+                width:8px;height:8px;border-width:2px;
+            }
+            &-head-blue{
+               color:@primaryColor;
+            }
+        }
+    }  
+}
+.menuSearch(@primaryColor,@menubag,@menubaghover,@menucolor,@menuSearchborderColor,@menuSearchIconColor,@menuSearchPlaceholderColor){
+    /*menu*/
+    .ivu-menu{
+        background: @menubag;
+        b,i{color:@menucolor}
+        .ivu-menu-item-active:not(.ivu-menu-submenu) {
+            background:@menubaghover;
+            &:after {
+              background: @primaryColor !important;
+            }
+            b,i{color: @primaryColor}
+        }
+        .ivu-menu-item-selected{
+            color: @primaryColor !important;
+        }
+        .ivu-menu-item {
+            color:@menucolor;
+        }
+        &-item,&-submenu-title{
+            color: @menucolor;
+
+            &-active:not(.ivu-menu-submenu),
+            &-active:not(.ivu-menu-submenu):hover {
+                background:@menubaghover !important;
+                &.ivu-menu-opened {
+                    background:@menubaghover !important;
+                }
+            }
+            &:hover{
+                background:@menubaghover !important;
+                color: @primaryColor;
+                b,i{color: @primaryColor}
+            };
+        }
+
+        .ivu-menu-item,
+        .ivu-menu-submenu-title {
+          padding: 7.5px 18px;
+        }
+    }
+    .app-aside{
+        background:@menubag;
+        .menu_kw{color:@primaryColor}
+        .app_aside_search{
+            .ivu-input-prefix{
+                i{.colorIconToRGBA(@menuSearchIconColor,0.65)}
+            }
+            // input
+            .ivu-input {
+                .colorIconToRGBA(@menucolor,1);
+                .borderBottomToRGBA(@menuSearchborderColor,0.25)
+            }
+            // placeholder
+            .ivu-input::placeholder {
+                .colorIconToRGBA(@menuSearchPlaceholderColor,0.45)
+            }
+            .ivu-input:focus {
+                .colorIconToRGBA(@menucolor,1);
+                border-bottom: 1px solid @primaryColor;
+                &::placeholder {
+                    .colorIconToRGBA(@menuSearchPlaceholderColor,1);
+                }
+            }
+        }
+        
+        .app_aside_search_focus{
+            .ivu-input-prefix {
+                i{
+                    .colorIconToRGBA(@menuSearchIconColor,1)
+                }
+            }
+        }
+    }
+}

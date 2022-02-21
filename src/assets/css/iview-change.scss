@@ -1,0 +1,259 @@
+$bordercolor:#DADDE1;
+$disabledbag:#EFF0F4;
+$disabledcolor:#A3ABB4;
+$boldTextColor:#1D293D;
+$textcolor:#47576A;
+$pagebordercolor:#919AA6;
+$borderradiusnum:2px;
+$tableborderbg:#F6F6F7;
+$linkcolor:#3E98F1;
+$errorcolor:#ff3226;
+$tableOperateBorder:rgba(81, 90, 110, 0.2);
+.appcontent{background:#EAEBEF;padding:10px 20px 0;height: calc(100% - 40px);
+  .appcontent-con{background:#fff;height:100%;position:relative;width:100%;
+    .tags-view-container+div{overflow:auto;height:calc(100% - 40px);}
+  }
+}
+.height100{height:100%}
+/*表格操作 按钮 表格操作下拉*/
+.table-operate-btn{
+  &>a,&-more{
+    color:$linkcolor !important;font-size:0.875rem;border-right:1px solid $tableOperateBorder;padding:0 8px;
+    &:last-child{border-right:none;}
+  }
+  &>a{
+    &:first-child{padding-left:0;}
+  }
+  
+}
+.btnlist_content{
+  padding:0 10px;
+  a{
+    display:block;padding:5px;font-size:0.875rem;
+  }
+}
+/*面包屑*/
+.ivu-breadcrumb{
+  font-size:0.875rem;color:$textcolor;
+  &> span:last-child{
+    color:$boldTextColor
+  }
+  a{color: #515a6e;}
+}
+.breadcrumb{padding:16px 1rem 32px}
+/*select*/
+.ivu-select-item{
+ font-size:0.875rem !important
+}
+.ivu-select-disabled .ivu-select-selection{
+ background-color:$disabledbag
+}
+.ivu-select-input[disabled]{
+  color:$disabledcolor;
+}
+.ivu-select-single{
+  .ivu-select-selection{
+      .ivu-select-placeholder,.ivu-select-selected-value{
+          padding-left:12px;
+      }
+  }
+}
+/*input*/
+.ivu-input {
+font-size:.75rem !important;
+border-radius: $borderradiusnum;
+padding:8px 12px;
+border: 1px solid $bordercolor;
+  &.ivu-input-with-prefix{padding-left:30px;}
+}
+.ivu-form-item-error{
+  .ivu-input {
+      border: 1px solid $errorcolor;
+   }
+  .ivu-form-item-error-tip{color:$errorcolor}
+} 
+.ivu-input-icon-clear {
+  cursor: pointer;
+}
+.ivu-input[disabled], fieldset[disabled] .ivu-input{
+  background: $disabledbag;
+  color:$disabledcolor;
+}
+/*radio*/
+.ivu-radio{
+  line-height: inherit;
+}
+
+/*tag*/
+.ivu-tag{
+  border: 1px solid $bordercolor;
+  border-radius:$borderradiusnum;
+  background:#fff;
+  color:$textcolor;
+}
+
+/*tabs*/
+.ivu-tabs-nav{
+  .ivu-tabs-tab-active{
+      color: $boldTextColor;
+  }
+  .ivu-tabs-tab{
+      font-size:0.875rem;
+      &:hover{
+          color: $boldTextColor;
+      }
+  }
+}
+
+.moudel-task-set-add .ivu-input {
+width: 250px;
+}
+/*按钮*/
+.ivu-btn {
+    border-radius:2px;padding:6px 24px;font-size:0.875rem;line-height:1.4;
+  &>span{vertical-align:baseline;}
+  i{margin-right: 5px;}
+  &.upload-btn-style{background:none;border:none;color:$textcolor;padding:0;
+     &>i{color:$linkcolor;margin-right:0;}
+  }
+  &[disabled]{background:#f7f7f7;border-color: #dcdee2;}
+}
+.functionnode .ivu-btn i {
+  margin-right: 0px;
+} 
+.btn{padding:6px 16px;font-size:.875rem !important;border-radius:2px;}
+.btn-outline-info{margin-right:4px;font-weight:500;}
+.searchBtn{
+  padding:0px 16px;border-radius:2px;color:#fff;height:32px;line-height:32px;
+  &:hover{color:#fff !important;opacity:0.8}
+}
+.searchresetBtn{
+  padding:0px 16px;border-radius:2px;color:#fff;height:32px;line-height:32px;font-weight: 500; border:1px solid $bordercolor;color:$boldTextColor;
+  margin-left:8px;
+  &:hover{color:$boldTextColor !important;}
+}
+.ivu-btn-default{
+  border:1px solid $bordercolor;color:$boldTextColor;
+  &:hover{color:$boldTextColor !important;}
+}
+.special_btn{padding:6px 15px}
+/*分页*/
+.page-con{
+  text-align:right;padding:16px 0;font-size:14px;color: $boldTextColor;
+  .ivu-page-total{float: left;}
+  .ivu-select-selected-value{text-align: center;color: $boldTextColor;}
+}
+.ivu-page.mini{
+  .ivu-page-prev,.ivu-page-next,.ivu-page-item{border:1px solid $pagebordercolor;color:$textcolor;font-family:'Microsoft YaHei', 'Open Sans', 'PingFang SC' !important;}
+  .ivu-page-item-active{color: #fff;
+     &:hover{color:#fff;
+       a{color:#fff;}
+     }
+     a:hover{color:#fff !important}
+  }
+  .ivu-select-selection{height: 32px;border:1px solid $pagebordercolor;
+    .ivu-select-placeholder,.ivu-select-selected-value{ height: 32px; line-height: 32px;}
+  }
+  .ivu-page-options-elevator{height: 32px;line-height:32px;
+      input{height:32px;border:1px solid $pagebordercolor;}
+  }
+}
+/*table*/
+.ivu-table-wrapper{border:none}
+.ivu-table {
+ min-width: 400px;font-size:0.875rem;color:$textcolor;
+ &:before {
+  z-index: 0;height:0px;
+}
+&:after{height:0;}
+th{
+  background:$tableborderbg;
+  box-shadow:none;
+  -webkit-box-shadow:none;
+  // box-shadow: 1px -1px 0px 0px #ECEEF0, -1px -1px 0px 0px #ECEEF0;
+  color: $textcolor;
+}
+}
+.ivu-table-small th,.ivu-table th, .ivu-table td{height:40px;}
+.ivu-table-stripe{
+.ivu-table-body,.ivu-table-fixed-body{
+  tr:nth-child(2n) td{background: #fff;}
+} 
+}
+.ivu-table-fixed{
+  -webkit-box-shadow: 0px 2px 6px 1px  rgba(181, 188, 195, 0.35);
+  box-shadow: 0px 2px 6px 1px  rgba(181, 188, 195, 0.35);
+}
+.ivu-table-fixed-header{
+&>table{
+  &>thead{
+    &>tr{
+      &>th{text-align:left;
+        &.ivu-table-column-center{text-align:center;}
+      }
+    }
+  }
+}
+}
+.ivu-table-fixed-right{
+-webkit-box-shadow: 0px 2px 6px 1px  rgba(181, 188, 195, 0.35);
+  box-shadow:0px 2px 6px 1px  rgba(181, 188, 195, 0.35);
+}
+/*form 表单*/
+.form-row{
+  margin-bottom:4px;padding-top:0px;
+}
+.button-con{margin-bottom:12px;}
+.card{
+&>form{
+  &>.ivu-row{
+    &>.ivu-col{
+      padding-left:30px;
+      &:first-child,&:nth-child(4n+1){padding-left:0;}
+    }
+  }
+}
+}
+.ivu-form-item {
+   margin-bottom: 18px;
+   .ivu-form-item-label{width:60px;text-align:right;padding:0px 8px 0px 0;line-height:34px;}
+   &.label_hh{
+    .ivu-form-item-label{line-height:1.4;}
+   }
+   &.search-btn-width{
+     .ivu-form-item-content{margin-left:0 !important;}
+   }
+}
+.form-group{
+margin-right:32px;
+&.ml-3{margin-left:0 !important;}
+&:last-child{margin-right:0;}
+input,.ivu-radio-group{margin-left:8px;}
+}
+.ivu-form-item-error-tip {
+  color: #ff445f;
+  font-size: 12px;
+  padding-top: 2px;
+}
+/* ztree */
+.ztree li{
+  .node_name{
+    margin-left: 12px !important;;
+    padding: 0 3px !important;
+  }
+  span.button.edit{
+    margin-left:12px !important;
+  }
+  span.button.remove{
+    margin-left:8px !important;
+  }
+}
+/*timeline*/
+.ivu-timeline{
+  &-item{
+    &-head{
+      width:8px;height:8px;border:2px solid transparent;
+    }
+  }
+}
+  

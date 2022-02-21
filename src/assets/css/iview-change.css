@@ -1,0 +1,424 @@
+@charset "UTF-8";
+.appcontent {
+  background: #EAEBEF;
+  padding: 10px 20px 0;
+  height: calc(100% - 40px);
+}
+
+.appcontent .appcontent-con {
+  background: #fff;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.appcontent .appcontent-con .tags-view-container + div {
+  overflow: auto;
+  height: calc(100% - 40px);
+}
+
+.height100 {
+  height: 100%;
+}
+
+/*表格操作 按钮 表格操作下拉*/
+.table-operate-btn > a, .table-operate-btn-more {
+  color: #3E98F1 !important;
+  font-size: 0.875rem;
+  border-right: 1px solid rgba(81, 90, 110, 0.2);
+  padding: 0 8px;
+}
+
+.table-operate-btn > a:last-child, .table-operate-btn-more:last-child {
+  border-right: none;
+}
+
+.table-operate-btn > a:first-child {
+  padding-left: 0;
+}
+
+.btnlist_content {
+  padding: 0 10px;
+}
+
+.btnlist_content a {
+  display: block;
+  padding: 5px;
+  font-size: 0.875rem;
+}
+
+/*面包屑*/
+.ivu-breadcrumb {
+  font-size: 0.875rem;
+  color: #47576A;
+}
+
+.ivu-breadcrumb > span:last-child {
+  color: #1D293D;
+}
+
+.ivu-breadcrumb a {
+  color: #515a6e;
+}
+
+.breadcrumb {
+  padding: 16px 1rem 32px;
+}
+
+/*select*/
+.ivu-select-item {
+  font-size: 0.875rem !important;
+}
+
+.ivu-select-disabled .ivu-select-selection {
+  background-color: #EFF0F4;
+}
+
+.ivu-select-input[disabled] {
+  color: #A3ABB4;
+}
+
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+  padding-left: 12px;
+}
+
+/*input*/
+.ivu-input {
+  font-size: .75rem !important;
+  border-radius: 2px;
+  padding: 8px 12px;
+  border: 1px solid #DADDE1;
+}
+
+.ivu-input.ivu-input-with-prefix {
+  padding-left: 30px;
+}
+
+.ivu-form-item-error .ivu-input {
+  border: 1px solid #ff3226;
+}
+
+.ivu-form-item-error .ivu-form-item-error-tip {
+  color: #ff3226;
+}
+
+.ivu-input-icon-clear {
+  cursor: pointer;
+}
+
+.ivu-input[disabled], fieldset[disabled] .ivu-input {
+  background: #EFF0F4;
+  color: #A3ABB4;
+}
+
+/*radio*/
+.ivu-radio {
+  line-height: inherit;
+}
+
+/*tag*/
+.ivu-tag {
+  border: 1px solid #DADDE1;
+  border-radius: 2px;
+  background: #fff;
+  color: #47576A;
+}
+
+/*tabs*/
+.ivu-tabs-nav .ivu-tabs-tab-active {
+  color: #1D293D;
+}
+
+.ivu-tabs-nav .ivu-tabs-tab {
+  font-size: 0.875rem;
+}
+
+.ivu-tabs-nav .ivu-tabs-tab:hover {
+  color: #1D293D;
+}
+
+.moudel-task-set-add .ivu-input {
+  width: 250px;
+}
+
+/*按钮*/
+.ivu-btn {
+  border-radius: 2px;
+  padding: 6px 24px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.ivu-btn > span {
+  vertical-align: baseline;
+}
+
+.ivu-btn i {
+  margin-right: 5px;
+}
+
+.ivu-btn.upload-btn-style {
+  background: none;
+  border: none;
+  color: #47576A;
+  padding: 0;
+}
+
+.ivu-btn.upload-btn-style > i {
+  color: #3E98F1;
+  margin-right: 0;
+}
+
+.ivu-btn[disabled] {
+  background: #f7f7f7;
+  border-color: #dcdee2;
+}
+
+.functionnode .ivu-btn i {
+  margin-right: 0px;
+}
+
+.btn {
+  padding: 6px 16px;
+  font-size: .875rem !important;
+  border-radius: 2px;
+}
+
+.btn-outline-info {
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+.searchBtn {
+  padding: 0px 16px;
+  border-radius: 2px;
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+}
+
+.searchBtn:hover {
+  color: #fff !important;
+  opacity: 0.8;
+}
+
+.searchresetBtn {
+  padding: 0px 16px;
+  border-radius: 2px;
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+  font-weight: 500;
+  border: 1px solid #DADDE1;
+  color: #1D293D;
+  margin-left: 8px;
+}
+
+.searchresetBtn:hover {
+  color: #1D293D !important;
+}
+
+.ivu-btn-default {
+  border: 1px solid #DADDE1;
+  color: #1D293D;
+}
+
+.ivu-btn-default:hover {
+  color: #1D293D !important;
+}
+
+.special_btn {
+  padding: 6px 15px;
+}
+
+/*分页*/
+.page-con {
+  text-align: right;
+  padding: 16px 0;
+  font-size: 14px;
+  color: #1D293D;
+}
+
+.page-con .ivu-page-total {
+  float: left;
+}
+
+.page-con .ivu-select-selected-value {
+  text-align: center;
+  color: #1D293D;
+}
+
+.ivu-page.mini .ivu-page-prev, .ivu-page.mini .ivu-page-next, .ivu-page.mini .ivu-page-item {
+  border: 1px solid #919AA6;
+  color: #47576A;
+  font-family: 'Microsoft YaHei', 'Open Sans', 'PingFang SC' !important;
+}
+
+.ivu-page.mini .ivu-page-item-active {
+  color: #fff;
+}
+
+.ivu-page.mini .ivu-page-item-active:hover {
+  color: #fff;
+}
+
+.ivu-page.mini .ivu-page-item-active:hover a {
+  color: #fff;
+}
+
+.ivu-page.mini .ivu-page-item-active a:hover {
+  color: #fff !important;
+}
+
+.ivu-page.mini .ivu-select-selection {
+  height: 32px;
+  border: 1px solid #919AA6;
+}
+
+.ivu-page.mini .ivu-select-selection .ivu-select-placeholder, .ivu-page.mini .ivu-select-selection .ivu-select-selected-value {
+  height: 32px;
+  line-height: 32px;
+}
+
+.ivu-page.mini .ivu-page-options-elevator {
+  height: 32px;
+  line-height: 32px;
+}
+
+.ivu-page.mini .ivu-page-options-elevator input {
+  height: 32px;
+  border: 1px solid #919AA6;
+}
+
+/*table*/
+.ivu-table-wrapper {
+  border: none;
+}
+
+.ivu-table {
+  min-width: 400px;
+  font-size: 0.875rem;
+  color: #47576A;
+}
+
+.ivu-table:before {
+  z-index: 0;
+  height: 0px;
+}
+
+.ivu-table:after {
+  height: 0;
+}
+
+.ivu-table th {
+  background: #F6F6F7;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  color: #47576A;
+}
+
+.ivu-table-small th, .ivu-table th, .ivu-table td {
+  height: 40px;
+}
+
+.ivu-table-stripe .ivu-table-body tr:nth-child(2n) td, .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n) td {
+  background: #fff;
+}
+
+.ivu-table-fixed {
+  -webkit-box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
+  box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
+}
+
+.ivu-table-fixed-header > table > thead > tr > th {
+  text-align: left;
+}
+
+.ivu-table-fixed-header > table > thead > tr > th.ivu-table-column-center {
+  text-align: center;
+}
+
+.ivu-table-fixed-right {
+  -webkit-box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
+  box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
+}
+
+/*form 表单*/
+.form-row {
+  margin-bottom: 4px;
+  padding-top: 0px;
+}
+
+.button-con {
+  margin-bottom: 12px;
+}
+
+.card > form > .ivu-row > .ivu-col {
+  padding-left: 30px;
+}
+
+.card > form > .ivu-row > .ivu-col:first-child, .card > form > .ivu-row > .ivu-col:nth-child(4n+1) {
+  padding-left: 0;
+}
+
+.ivu-form-item {
+  margin-bottom: 18px;
+}
+
+.ivu-form-item .ivu-form-item-label {
+  width: 60px;
+  text-align: right;
+  padding: 0px 8px 0px 0;
+  line-height: 34px;
+}
+
+.ivu-form-item.label_hh .ivu-form-item-label {
+  line-height: 1.4;
+}
+
+.ivu-form-item.search-btn-width .ivu-form-item-content {
+  margin-left: 0 !important;
+}
+
+.form-group {
+  margin-right: 32px;
+}
+
+.form-group.ml-3 {
+  margin-left: 0 !important;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-group input, .form-group .ivu-radio-group {
+  margin-left: 8px;
+}
+
+.ivu-form-item-error-tip {
+  color: #ff445f;
+  font-size: 12px;
+  padding-top: 2px;
+}
+
+/* ztree */
+.ztree li .node_name {
+  margin-left: 12px !important;
+  padding: 0 3px !important;
+}
+
+.ztree li span.button.edit {
+  margin-left: 12px !important;
+}
+
+.ztree li span.button.remove {
+  margin-left: 8px !important;
+}
+
+/*timeline*/
+.ivu-timeline-item-head {
+  width: 8px;
+  height: 8px;
+  border: 2px solid transparent;
+}
