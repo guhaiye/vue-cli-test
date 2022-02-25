@@ -36,6 +36,7 @@ export default {
     return {
       linkurl:'',
       componenturl:'',
+      newbar:[],
       theme: localStorage.theme || 'theme1'
     }
   },
@@ -84,6 +85,7 @@ export default {
                   'currentid':syschildren[i].parent_id,
                   'title': syschildren[i].name,
                   'isbtn': syschildren[i].ishidden,
+                   id:syschildren[i].id
                 }
               });
             }
@@ -100,6 +102,56 @@ export default {
           //  this.SET_ROUTERS(asyncRouterMap)
           MenuUtils(routers,asyncRouterMap);
           this.$router.addRoutes(routers);
+          const json_data = this.menu[0].children;
+          var newarr = this.getTree(json_data);
+          this.newbar = newarr;
+    },
+    getTree(treeData){
+      if(treeData==undefined||treeData.length==0) return;
+      var firstMenus=[];
+      var leftMenus=[];//剩余未处理的
+      var dealData=this.deepCopy(treeData);
+      for(var i in dealData){
+          if(dealData[i].parentId== 0){
+              firstMenus.push(dealData[i]);
+          }else{
+              leftMenus.push(dealData[i]);
+          }
+      }
+      this.buildMenuTree(firstMenus,leftMenus);
+      return firstMenus;
+    },
+    buildMenuTree(firstMenus, leftMenus) {
+          var deleteNode={};//待删除节点
+          for (var i in firstMenus) {
+            for (var j in leftMenus) {
+            if(firstMenus[i].ishidden === false && leftMenus[j].ishidden === false && firstMenus[i].nodetype !== 2 && leftMenus[j].nodetype !== 2){
+                if (firstMenus[i].id === leftMenus[j].parentId) {
+                  if (firstMenus[i].children == undefined) {
+                    firstMenus[i].children = [leftMenus[j]];
+                  } else {
+                    firstMenus[i].children.push(leftMenus[j]);
+                  }
+                  deleteNode[leftMenus[j].id]='';
+                }
+            }
+            }
+          }
+        //删除已经处理的
+        for(var i in leftMenus){
+          if(deleteNode[leftMenus[i].id]){
+            leftMenus.splice(i, 1);//移除已处理的元素
+          }
+        }
+        //处理children的层级，剩余未处理的
+        for (var k in firstMenus) {
+          if (firstMenus[k].children != undefined && firstMenus[k].children.length > 0) {
+              this.buildMenuTree(firstMenus[k].children, leftMenus);
+          }
+        }
+    },
+    deepCopy(ary){
+        return JSON.parse(JSON.stringify(ary));
     },
     getDetail(type,username) {
         if(type == 0){ //不是代理的
@@ -269,6 +321,9 @@ export default {
           var theme = themedata;
           that.setTheme(theme,edata)
       }
+      const json_data = !!that.menu && !!that.menu[0] && !!that.menu[0].children && that.menu[0].children || [];
+      var newarr = that.getTree(json_data);
+      that.newbar = newarr;
     });
     
   },

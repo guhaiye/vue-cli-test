@@ -49,7 +49,6 @@ export function  jsonFIndParent(id,arr,path){
     //    console.log(tempPath,arr[i]['id'],id)
 
        if(arr[i]['id'] == id){
-           console.log(tempPath)
            return tempPath
        }
        if(arr[i].children){

@@ -30,10 +30,8 @@
         methods: {
             getBreadcrumb() {
                 let _arr = this.newbar
-                console.log(_arr)
                 const {id} = this.$route.meta
                 this.breadCrumbList = jsonFIndParent(id,_arr)
-                console.log(this.breadCrumbList)
             }
         }
     }
