@@ -4,6 +4,7 @@
 注意： /static/global/global.js 是对后端服务域名的配置
       hasportal //true代表是集成portal,false是不集成
       初始是false,代表位集成环境，将来集成环境需设置成true
+      这里做一个测试
 ## 基础功能
 
 
