@@ -15,5 +15,8 @@
       "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", "dynamic-import-node"]
     }
   },
-
+  "plugins":[["import",{
+    "libraryName":"view-design",
+    "libraryDirectory":"src/components"
+  }]]
 }

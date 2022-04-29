@@ -1,7 +1,6 @@
 import Vue from 'vue'
-import ViewUI from 'view-design';
+import './viewDesignBabel'
 import directives from './misc/directives'
-import { Message} from 'view-design'
 import router from './routers'
 import store from './store/'
 import api from './api'
@@ -28,7 +27,6 @@ Vue.prototype.globalconfig = globalconfig;
 Vue.prototype.$Message = Message
 Vue.prototype.globalpagesize = 10
 Vue.prototype.$api = api;
-Vue.use(ViewUI)
 Vue.use(loading) //页面loading效果
 /* eslint-disable no-new */
 new Vue({

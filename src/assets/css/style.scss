@@ -448,6 +448,7 @@ label{cursor:text}
   100% {font-size:14px;color:red;}
 }
 .margin-bottom-15{margin-bottom:15px !important;}
+.notice-icon{background:url(../../assets/img/image.png) -412px -6px;width:22px;height:18px;display:inline-block;vertical-align:text-bottom;margin-right:10px;}
 
 .vouchericon{font-size:1rem;cursor:pointer;color:#666}
 // .vouchericon+.vouchericon{margin-left: 10px;}
@@ -591,7 +592,6 @@ label{cursor:text}
   li{float:left;width:100%;padding:8px;list-style:none;cursor:pointer;margin-bottom:1px;}
 }
 .choicenocon{text-align:center;padding-top:200px;}
-.ivu-table-tip>table>tbody>tr>td{width:100% !important;}
 .ivu-spin-fix{z-index:4}
 .ivu-select-dropdown-list{margin-bottom:0px;}
 .ivu-tooltip-popper{word-break:break-all}

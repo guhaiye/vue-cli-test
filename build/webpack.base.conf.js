@@ -4,6 +4,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const vueLoaderPlugin = require('vue-loader/lib/plugin');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -34,10 +35,13 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.less'],
     alias: {
       '@': resolve('src')
     }
+  },
+  devServer: {
+    disableHostCheck: true
   },
   externals: {
     localStorage: 'window.localStorage',
@@ -48,11 +52,23 @@ module.exports = {
     // $: 'jquery'
   },
   plugins: [
+    new vueLoaderPlugin(),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery'
     })
   ],
+  performance: {
+    hints: 'warning',
+    // 入口起点的最大体积
+    maxEntrypointSize: 50000000,
+    // 生成文件的最大体积
+    maxAssetSize: 30000000,
+    // 只给出 js 文件的性能提示
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.js')
+    }
+  },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
@@ -69,7 +85,7 @@ module.exports = {
           resolve('test'), 
           resolve('node_modules/webpack-dev-server/client'),
           resolve('static'),
-          resolve('node_modules/iview/src'),
+          resolve('node_modules/view-design/src'),
         ]
       },
       {
