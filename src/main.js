@@ -24,7 +24,6 @@ Vue.prototype.hasPermissions = hasPermissions // 注入权限验证方法到所�
 Object.keys(directives).forEach(d => Vue.directive(d, directives[d]))
 
 Vue.prototype.globalconfig = globalconfig;
-Vue.prototype.$Message = Message
 Vue.prototype.globalpagesize = 10
 Vue.prototype.$api = api;
 Vue.use(loading) //页面loading效果
