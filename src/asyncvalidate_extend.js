@@ -70,6 +70,14 @@ export const validFormatNum = (rule, value, callback) => {
   }
   
 }; 
+export const validFormatSZ = (rule, value, callback) => {
+    var code = /^\d{0,2}$/;
+    if(code.test(value)){
+      callback();
+    }else{
+      callback('0-2位有效数字');
+    }
+  }; 
 export const validFormatYear = (rule, value, callback) => {
   var code = /^\d{0,4}$/;
   if(code.test(value)){

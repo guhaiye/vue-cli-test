@@ -291,14 +291,20 @@
 }
 
 /*table*/
+.noDataHtml .ivu-table-tip {
+  overflow-x: auto;
+}
+
 .ivu-table-wrapper {
-  border: none;
+  border: 1px solid #DADDE1;
+  box-sizing: initial;
 }
 
 .ivu-table {
   min-width: 400px;
   font-size: 0.875rem;
   color: #47576A;
+  overflow-x: auto;
 }
 
 .ivu-table:before {
@@ -325,9 +331,13 @@
   background: #fff;
 }
 
-.ivu-table-fixed {
+.ivu-table-fixed, .ivu-table-fixed-right {
   -webkit-box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
   box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
+}
+
+.ivu-table-fixed::before, .ivu-table-fixed-right::before {
+  background: none !important;
 }
 
 .ivu-table-fixed-header > table > thead > tr > th {
@@ -336,11 +346,6 @@
 
 .ivu-table-fixed-header > table > thead > tr > th.ivu-table-column-center {
   text-align: center;
-}
-
-.ivu-table-fixed-right {
-  -webkit-box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
-  box-shadow: 0px 2px 6px 1px rgba(181, 188, 195, 0.35);
 }
 
 /*form 表单*/
