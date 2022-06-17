@@ -49,64 +49,52 @@ export const tableColumn = (vm) =>{
       default: ({ row, column },h) => {
         const {id,statusCode} = row;
         var arr = [];
-        let isedit = styleVisible('F004_01_02')
-        let isdel = styleVisible('F004_01_05')
-        let isapproval = styleVisible('F004_01_06')
-        let ispreview = styleVisible('F004_01_07')
         //草稿0：编辑和删除  审核中1：预览和审批  已发布2：预览  已撤回3：编辑和删除
-        if(isedit == 'visible' && (statusCode == '0' || statusCode == '3')){
-          arr.push(h('a',{
-            attrs:{
-            'title':'编辑',
-              class:'vouchericon'
-            },
-            on:{
-              click:()=>{
-                vm.$router.push('./edit/'+id)
-              }
+        arr.push(h('a',{
+          attrs:{
+          'title':'编辑',
+            class:'vouchericon'
+          },
+          on:{
+            click:()=>{
+              vm.$router.push('./edit/'+id)
             }
-          },'编辑'))
-        }
-        if(isdel == 'visible' && (statusCode == '0' || statusCode == '3')){
-          arr.push(h('a',{
-            attrs:{ 
-            'title':'删除',
-              class:'vouchericon'
-            },
-            on:{
-              click:()=>{
-                vm.$refs.confirmdel.deleteconfirm = true;
-                vm.delids = id;
-              }
+          }
+        },'编辑'))
+        arr.push(h('a',{
+          attrs:{ 
+          'title':'删除',
+            class:'vouchericon'
+          },
+          on:{
+            click:()=>{
+              vm.$refs.confirmdel.deleteconfirm = true;
+              vm.delids = id;
             }
-          },'删除'))
-        }
-        if(isapproval == 'visible' && statusCode == '1'){
-          arr.push(h('a',{
-            attrs:{
-            'title':'审批',
-              class:'vouchericon'
-            },
-            on:{
-              click:()=>{
-                vm.$router.push('./audit/'+id)
-              }
+          }
+        },'删除'))
+        arr.push(h('a',{
+          attrs:{
+          'title':'审批',
+            class:'vouchericon'
+          },
+          on:{
+            click:()=>{
+              vm.$router.push('./audit/'+id)
             }
-          },'审批'))
-        }
-        if(ispreview == 'visible' && (statusCode == '1' || statusCode == '2')){
-          arr.push(h('a',{
-            attrs:{
-            'title':'预览',
-              class:'vouchericon'
-            },
-            on:{
-              click:()=>{
-                vm.$router.push('./preview/'+id)
-              }
+          }
+        },'审批'))
+        arr.push(h('a',{
+          attrs:{
+          'title':'预览',
+            class:'vouchericon'
+          },
+          on:{
+            click:()=>{
+              vm.$router.push('./preview/'+id)
             }
-          },'预览'))
-        }
+          }
+        },'预览'))
         return [operatorBtn(arr,h)]
     }
     }

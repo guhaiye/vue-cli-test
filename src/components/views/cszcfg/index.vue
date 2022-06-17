@@ -18,12 +18,11 @@
             class="btn btn-outline-info"
             >新增</a
           >
-          <exportBtnUi :propsData="propsData" v-btnhaspermisson="'F004_01_03'" />
+          <exportBtnUi :propsData="propsData"  />
           <importBtnUi
             :importUrl="importUrl"
             :downApiUrl="downApiUrl"
             :loadTable="initData"
-            v-btnhaspermisson="'F004_01_04'"
           ></importBtnUi>
         </buttonConUi>
       </template>

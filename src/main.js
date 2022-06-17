@@ -6,7 +6,7 @@ import router from './routers'
 import store from './store/'
 import api from './api'
 import loading from '@/misc/loading.js' // 引入loading
-
+import globalVue from './resetViewDesign'
 import 'babel-polyfill'
 
 import './misc/dropdown'
@@ -29,6 +29,7 @@ Vue.prototype.globalconfig = globalconfig;
 Vue.prototype.globalpagesize = 10
 Vue.prototype.$api = api;
 Vue.use(loading) //页面loading效果
+Vue.use(globalVue)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
