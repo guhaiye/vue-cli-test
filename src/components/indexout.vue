@@ -74,7 +74,7 @@ export default {
                 'id':syschildren[i].id,
                 'funccode':syschildren[i].code,
                 'component':syschildren[i].component_url,
-                'path':'/cas'+path,
+                'path': path,
                 'showcode':syschildren[i].show_code,
                 'nodetype':syschildren[i].node_type,
                 'icon':syschildren[i].icon_url,
@@ -165,7 +165,17 @@ export default {
           var result = response.data.result;
           var data = response.data.data;
           this.routerComp(data);
-          this.$router.push(this.linkurl);
+          if(type == 0){
+            this.$router.push(this.linkurl);
+          }else{
+            var hasload = localStorage.getItem('indexhasload2');
+            if(hasload){
+                this.$router.push(this.linkurl);
+            }else{
+                localStorage.setItem('indexhasload2',1);
+                window.location.href = base.sq+'/proxy/cas/ticket?state='+this.linkurl
+            }
+          }
         });
     },
     getOutIndex(type,username){
@@ -243,6 +253,7 @@ export default {
       }
       this.componenturl = edata.posscompurl;
       var userinfo = edata.userinfo;
+      this.USER_SIGNIN(userinfo);
       var codeParams = edata.codeParams;
       this.setCodeParams(codeParams);
       if(type == 0){
@@ -278,6 +289,7 @@ export default {
       if(timestamps != undefined && gettimestamp != undefined && timestamps != gettimestamp){
           localStorage.removeItem('menu');
           localStorage.removeItem('indexhasload');
+          localStorage.removeItem('indexhasload2');
           localStorage.removeItem('codeRules')
           localStorage.removeItem('user')
       }
@@ -285,6 +297,7 @@ export default {
       if(userstring === "{}"){
           localStorage.removeItem('menu');
           localStorage.removeItem('indexhasload');
+          localStorage.removeItem('indexhasload2');
           localStorage.removeItem('codeRules')
       }
       /*代理的时候验证是否有传过来的值 */
@@ -303,15 +316,13 @@ export default {
         that.setTheme(theme,edata)
         that.detailRedirect(1,edata)
       }
-      if(e.origin != base.authwebsq){
-        return;
-      }
+      // if(e.origin != base.authwebsq){
+      //   return;
+      // }
       var edata = e.data;
       var themedata = edata.themecolor;
-    
-      if(themedata == undefined){
+      if(themedata == undefined || themedata == null){
           localStorage.setItem('timestamp',edata.timestamp);
-          localStorage.setItem('sbparam',edata.sbparam)
           var theme = edata.theme;
           setTimeout(()=>{
            that.setTheme(theme,edata)

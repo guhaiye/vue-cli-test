@@ -102,7 +102,15 @@
             }
         }
     }
-
+    /*vxe-table*/
+    .vxe-table--render-default{
+        .vxe-body--row.row--hover{
+            background: @boxHoverColor;box-shadow: 0px -1px 0px 0px #ECEEF0;
+            &.row--stripe{
+                background: @boxHoverColor;box-shadow: 0px -1px 0px 0px #ECEEF0;
+            }
+        }
+    }
     /*page*/
     .ivu-page.mini{
         .ivu-page-prev, .ivu-page-next{ min-width: 32px; height: 32px; line-height: 32px;}
@@ -299,10 +307,14 @@
                 width:8px;height:8px;border-width:2px;
             }
             &-head-blue{
-               color:@primaryColor;
+               border-color:@primaryColor;
             }
         }
     }  
+    /*auchor*/
+    .ivu-anchor-link{
+        &-active{border-color:@primaryColor}
+    }
 }
 .menuSearch(@primaryColor,@menubag,@menubaghover,@menucolor,@menuSearchborderColor,@menuSearchIconColor,@menuSearchPlaceholderColor){
     /*menu*/

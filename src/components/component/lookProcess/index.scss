@@ -1,0 +1,39 @@
+.drawer-con{
+    height: calc(100% - 55px);
+    overflow: auto;
+    padding-bottom: 50px;
+    position: static;
+    .process-con{
+        border-radius:2px 0px 0px 2px;
+        box-shadow: 0px 2px 6px 0px rgba(190, 202, 218, 0.35);padding:16px;
+        display:flex;
+        justify-content: space-between;
+        &-photo{
+            width:42px;
+        }
+        &-content{
+            padding-left:8px;
+            flex: 1;
+            &-top{display:flex;
+                &-l{
+                 .process-spr{font-weight:bold;}
+                }
+                &-r{text-align:right}
+                &-l,&-r{
+                    flex:1;color:#5A7180;
+                    .process-state-btn{
+                        width: 64px;
+                        height: 24px;
+                        border-radius: 2px;
+                        border: 1px solid #DADDE1;
+                        float:right;
+                        text-align:center;
+                        &.ispass{color:#28BC6E}
+                        &.nopass{color:#fa7268}
+                    }
+                }
+            }
+            &-bottom{line-height:24px;margin-top:16px;}
+        }
+    }
+ }

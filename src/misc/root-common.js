@@ -822,3 +822,10 @@ export function sorTable(a,b,type){
   }
 
 }
+/**封装condition */
+export function getSearchField(condition,form) {
+    var arr = condition
+    let searchfiled = form;
+    let conarr = searchFieldFormat(arr, searchfiled);
+    return conarr;
+}

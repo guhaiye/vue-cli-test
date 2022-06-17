@@ -99,7 +99,7 @@ export default {
       Timer = setTimeout(() => {
         let path = this.$route.path;
         this.activeName = path;
-        this.$refs.menuEle.updateOpened();
+          this.$refs.menuEle && this.$refs.menuEle.updateOpened();
       }, 300);
     },
   },

@@ -63,37 +63,31 @@ export  function dataTransferText(data,v,type) {
     })
     return text
 }
+/**将字典封装成业务obj */
+export function dataToObj(arr){
+  for(let k in arr){
+    arr[k].map(v => {
+      v.value = v.dictCode
+      v.name = v.dictName
+    })
+  }
+  return arr
+}
 //异步请求静态字典
 export async function getApiAsync(type) {
     const params = typeCompare(type)
     let res = await baseApi.get(api.commonApi.getCommonDict,params)
-    var len = params['codeArray'].split(',').length;
-    if(len == 1){
-      return  res.data.data[params['codeArray']];
-    }else{
-      return  res.data.data;
-    }
+    return  dataToObj(res.data.data);
 }
 //异步请求动态字典
 export async function getApiDtAsync(type) {
     const params = typeCompare(type)
     let res = await baseApi.get(api.commonApi.getCommonDtDict,params)
-    var len = params['codeArray'].split(',').length;
-    if(len == 1){
-      return  res.data.data[params['codeArray']];
-    }else{
-      return  res.data.data;
-    }
+    return  dataToObj(res.data.data);
 }
 //异步请求前台用户状态
 export async function getApiFrontDtAsync(type) {
   const params = typeCompare(type)
   let res = await baseApi.get(api.commonApi.getCommonFrontDict,params)
-  var len = params['codeArray'].split(',').length;
-  if(len == 1){
-    return  res.data.data[params['codeArray']];
-  }else{
-    return  res.data.data;
-  }
-  
+  return  dataToObj(res.data.data);
 }

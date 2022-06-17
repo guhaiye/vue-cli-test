@@ -190,7 +190,7 @@ export default {
                           'id':syschildren[i].id,
                           'funccode':syschildren[i].code,
                           'component':syschildren[i].component_url,
-                          'path':firstpath+path,
+                          'path':path,
                           'showcode':syschildren[i].show_code,
                           'domainid':syschildren[i].domain_id,
                           'nodetype':syschildren[i].node_type,

@@ -8,6 +8,7 @@ $borderradiusnum:2px;
 $tableborderbg:#F6F6F7;
 $linkcolor:#3E98F1;
 $errorcolor:#ff3226;
+$errorbordercolor:#ff445f;
 $tableOperateBorder:rgba(81, 90, 110, 0.2);
 .appcontent{background:#EAEBEF;padding:10px 20px 0;height: calc(100% - 40px);
   .appcontent-con{background:#fff;height:100%;position:relative;width:100%;
@@ -40,7 +41,7 @@ $tableOperateBorder:rgba(81, 90, 110, 0.2);
   }
   a{color: #515a6e;}
 }
-.breadcrumb{padding:16px 1rem 32px}
+.breadcrumb{padding:16px 1rem 16px;z-index:1;width:50%}
 /*select*/
 .ivu-select-item{
  font-size:0.875rem !important
@@ -203,6 +204,16 @@ th{
   }
 }
 }
+/*vue2-editor*/
+.ql-toolbar,.ql-container{
+  &.ql-snow{
+    border:1px solid $bordercolor;
+  }
+}
+/*vxe-table*/
+.vxe-resizable.is--line:before{
+  height:90% !important;background:$bordercolor !important;
+}
 /*form 表单*/
 .form-row{
   margin-bottom:4px;padding-top:0px;
@@ -235,7 +246,7 @@ margin-right:32px;
 input,.ivu-radio-group{margin-left:8px;}
 }
 .ivu-form-item-error-tip {
-  color: #ff445f;
+  color: $errorbordercolor;
   font-size: 12px;
   padding-top: 2px;
 }
@@ -258,6 +269,22 @@ input,.ivu-radio-group{margin-left:8px;}
     &-head{
       width:8px;height:8px;border:2px solid transparent;
     }
+    &-tail{
+      left:3px
+    }
   }
 }
-  
+/*vue-select-tree*/
+.vue-treeselect{
+  line-height:14px;
+  .vue-treeselect__control{border-radius:2px;border-color:$bordercolor;}
+}
+.ivu-form-item-error{
+  .vue-treeselect{
+    .vue-treeselect__control{
+      border-color:$errorbordercolor;
+    }
+  }
+}
+/*auchor*/
+.ivu-anchor-link{border-left:2px solid transparent;}

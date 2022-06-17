@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import './viewDesignBabel'
+import './vxeTable'
 import directives from './misc/directives'
 import router from './routers'
 import store from './store/'
@@ -16,6 +17,7 @@ import '../my-theme/index.less'
 import './assets/css/plugins.scss'
 import './assets/css/style.scss'
 import './assets/css/fonts.scss'
+import 'vxe-table/lib/style.css'
 
 import { hasPermissions} from './misc/utils'
 Vue.prototype.hasPermissions = hasPermissions // 注入权限验证方法到所有组件

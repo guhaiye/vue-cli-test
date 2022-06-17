@@ -1,0 +1,60 @@
+.drawer-con {
+  height: calc(100% - 55px);
+  overflow: auto;
+  padding-bottom: 50px;
+  position: static;
+}
+
+.drawer-con .process-con {
+  border-radius: 2px 0px 0px 2px;
+  box-shadow: 0px 2px 6px 0px rgba(190, 202, 218, 0.35);
+  padding: 16px;
+  display: flex;
+}
+
+.drawer-con .process-con-photo {
+  width: 42px;
+}
+
+.drawer-con .process-con-content {
+  padding-left: 8px;
+}
+
+.drawer-con .process-con-content-top {
+  display: flex;
+}
+
+.drawer-con .process-con-content-top-l .process-spr {
+  font-weight: bold;
+}
+
+.drawer-con .process-con-content-top-r {
+  text-align: right;
+}
+
+.drawer-con .process-con-content-top-l, .drawer-con .process-con-content-top-r {
+  flex: 1;
+  color: #5A7180;
+}
+
+.drawer-con .process-con-content-top-l .process-state-btn, .drawer-con .process-con-content-top-r .process-state-btn {
+  width: 64px;
+  height: 24px;
+  border-radius: 2px;
+  border: 1px solid #DADDE1;
+  float: right;
+  text-align: center;
+}
+
+.drawer-con .process-con-content-top-l .process-state-btn.ispass, .drawer-con .process-con-content-top-r .process-state-btn.ispass {
+  color: #28BC6E;
+}
+
+.drawer-con .process-con-content-top-l .process-state-btn.nopass, .drawer-con .process-con-content-top-r .process-state-btn.nopass {
+  color: #fa7268;
+}
+
+.drawer-con .process-con-content-bottom {
+  line-height: 24px;
+  margin-top: 16px;
+}
