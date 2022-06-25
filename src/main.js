@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import './viewDesignBabel'
 import './vxeTable'
+import DatePickers  from 'szyh-date-picker'
 import directives from './misc/directives'
 import router from './routers'
 import store from './store/'
@@ -30,6 +31,7 @@ Vue.prototype.globalpagesize = 10
 Vue.prototype.$api = api;
 Vue.use(loading) //页面loading效果
 Vue.use(globalVue)
+Vue.use(DatePickers)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

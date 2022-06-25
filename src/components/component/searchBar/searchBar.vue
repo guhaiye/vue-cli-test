@@ -25,6 +25,15 @@
             :placeholder="item.placeholder"
             :value.sync="formValidate[item.key]"
           />
+          <DatePickers
+            v-else-if="item.type === 'szyhDatePickers'"
+            :type="item.type"
+            :value.sync="formValidate[item.key]"
+            :placeholder="item.placeholder"
+            :format="item.format"
+            :clearable="item.clearable"
+             style="width: 100%"
+           />
           <selectUi
             v-else-if="item.type === 'select'"
             :placeholder="item.placeholder"
