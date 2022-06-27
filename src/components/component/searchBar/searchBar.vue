@@ -27,12 +27,13 @@
           />
           <DatePickers
             v-else-if="item.type === 'szyhDatePickers'"
-            :type="item.type"
+            :type="item.datePickerType"
             :value.sync="formValidate[item.key]"
             :placeholder="item.placeholder"
             :format="item.format"
             :clearable="item.clearable"
              style="width: 100%"
+             @on-change="formValidate[item.key] = $event"
            />
           <selectUi
             v-else-if="item.type === 'select'"
