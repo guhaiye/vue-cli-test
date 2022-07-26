@@ -277,7 +277,10 @@ input,.ivu-radio-group{margin-left:8px;}
 /*vue-select-tree*/
 .vue-treeselect{
   line-height:14px;
-  .vue-treeselect__control{border-radius:2px;border-color:$bordercolor;}
+  .vue-treeselect__control{border-radius:2px;border-color:$bordercolor;height:32px;}
+}
+.vue-treeselect__placeholder, .vue-treeselect__single-value{
+  line-height:30px;
 }
 .ivu-form-item-error{
   .vue-treeselect{

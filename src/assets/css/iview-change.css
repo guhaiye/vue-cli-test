@@ -62,7 +62,9 @@
 }
 
 .breadcrumb {
-  padding: 16px 1rem 32px;
+  padding: 16px 1rem 16px;
+  z-index: 1;
+  width: 50%;
 }
 
 /*select*/
@@ -348,6 +350,17 @@
   text-align: center;
 }
 
+/*vue2-editor*/
+.ql-toolbar.ql-snow, .ql-container.ql-snow {
+  border: 1px solid #DADDE1;
+}
+
+/*vxe-table*/
+.vxe-resizable.is--line:before {
+  height: 90% !important;
+  background: #DADDE1 !important;
+}
+
 /*form 表单*/
 .form-row {
   margin-bottom: 4px;
@@ -426,4 +439,32 @@
   width: 8px;
   height: 8px;
   border: 2px solid transparent;
+}
+
+.ivu-timeline-item-tail {
+  left: 3px;
+}
+
+/*vue-select-tree*/
+.vue-treeselect {
+  line-height: 14px;
+}
+
+.vue-treeselect .vue-treeselect__control {
+  border-radius: 2px;
+  border-color: #DADDE1;
+  height: 32px;
+}
+
+.vue-treeselect__placeholder, .vue-treeselect__single-value {
+  line-height: 30px;
+}
+
+.ivu-form-item-error .vue-treeselect .vue-treeselect__control {
+  border-color: #ff445f;
+}
+
+/*auchor*/
+.ivu-anchor-link {
+  border-left: 2px solid transparent;
 }
