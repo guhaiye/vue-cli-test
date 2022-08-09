@@ -9,6 +9,7 @@
       header-row-class-name="titleStyle"
       auto-resize
       show-header
+      :border="border"
       highlight-hover-row
       :row-id="rowId"
       :height="tableHeight"
@@ -21,14 +22,17 @@
       :resizable="resizAble"
       :align="alignCell"
       :sort-config="{ remote: remoteAble, trigger: 'cell' }"
+      :tree-config="{transform: true, rowField: 'id', parentField: 'parentId'}"
       :checkbox-config="tableCheckboxConfig"
       @sort-change="sortChange"
       @checkbox-change="checkboxChange"
+      @filter-change="filterChangeEvent"
       @checkbox-all="checkboxAll"
       @radio-change="radioChange"
       keep-source
       v-bind="tableOptionsObj"
     >
+    <!-- :tree-config="{transform: true, rowField: 'id', parentField: 'parentId'}"  根据id 和 parentId 嵌套 -->
       <slot name="tableColumn"></slot>
     </vxe-grid>
     <Page
@@ -94,6 +98,10 @@ export default {
       type: Object, //checkbox配置项
       default: () => ({}),
     },
+    border:{
+      type:[String, Boolean],
+      default:'default'
+    }
   },
   computed: {
     tableOptionsObj: function () {
@@ -121,7 +129,7 @@ export default {
       sortField: "",
       sortType: "desc",
       loading: false,
-      tableData: [{ id: 1 }],
+      tableData: [],
       tablePage: {
         total: 0,
         current: 1,
@@ -134,6 +142,10 @@ export default {
     };
   },
   methods: {
+    //筛选触发事件
+    filterChangeEvent({ property, values }) {
+      this.$emit('filterChangeEvent', { property, value: values })
+    },
     //排序
     sortChange({ column, property, order }) {
       this.sortField = property;
