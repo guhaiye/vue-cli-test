@@ -10,6 +10,9 @@ export default {
       /**清除搜索条件 */
     clearSearchField() {
         this.$refs.formValidate.resetFields();
+        this.headerFilter.forEach((v,i)=>{
+            this.headerFilter[v] = ''
+        })
     },
     dataResultKey(e) {
         if (e.keyCode == 13) {
