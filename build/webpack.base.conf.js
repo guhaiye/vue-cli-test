@@ -60,11 +60,11 @@ module.exports = {
   ],
   performance: {
     hints: 'warning',
-    // Èë¿ÚÆðµãµÄ×î´óÌå»ý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     maxEntrypointSize: 50000000,
-    // Éú³ÉÎÄ¼þµÄ×î´óÌå»ý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     maxAssetSize: 30000000,
-    // Ö»¸ø³ö js ÎÄ¼þµÄÐÔÄÜÌáÊ¾
+    // Ö»ï¿½ï¿½ï¿½ï¿½ js ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾
     assetFilter: function (assetFilename) {
       return assetFilename.endsWith('.js')
     }
@@ -85,6 +85,7 @@ module.exports = {
           resolve('test'), 
           resolve('node_modules/webpack-dev-server/client'),
           resolve('static'),
+          resolve('/node_modules/_view-design@4.3.2@view-design/src'),
           resolve('node_modules/view-design/src'),
         ]
       },
