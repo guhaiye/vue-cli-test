@@ -1,4 +1,3 @@
-import Vue from 'vue'
 // export const SET_ROUTERS = 'SET_ROUTERS' //登录成功
 // export const OUT_ROUTERS = 'OUT_ROUTERS' //退出登录
 

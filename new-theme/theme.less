@@ -1,0 +1,792 @@
+// @import '~view-design/src/styles/index.less';
+@import '~szyh-view-ui/src/styles/index.less';
+
+.focusActive() {
+
+  &:active,
+  &:focus {
+    border-color: var(--primary-color);
+    .primaryBoxShadow()
+  }
+}
+
+.primaryBoxShadow() {
+  // box-shadow: 0 0 0 2px rgba(@myred,@mygreen,@myblue,@alpha);
+  box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+
+
+/**
+  1: @primaryColor主题色替换成了var(--primary-color)
+  2: box-shadow为主题色的0.1 替换成了 var(--primary-color-light)
+  3: @activeColor 替换成 var(--primary-color-active)
+  4: @focusColor 替换成了 var(--primary-color-hover)
+**/
+
+.theme() {
+
+  @boxHoverColor: var(--primary-color-light);
+
+  /*全局*/
+  a {
+    &:not(.dropdown-item):hover {
+      color: var(--primary-color-hover) !important
+    }
+
+    &:active {
+      color: var(--primary-color-active) !important
+    }
+
+    &.drop-menu-a:hover {
+      background: var(--primary-color-light) !important;
+
+      i {
+        color: var(--primary-color) !important;
+      }
+    }
+  }
+
+  /*面包屑*/
+  .ivu-breadcrumb {
+    a {
+      &:hover {
+        color: var(--primary-color)
+      }
+    }
+  }
+
+  /*input*/
+  .ivu-input:focus {
+    border-color: var(--primary-color);
+    .primaryBoxShadow()
+  }
+
+  .ivu-input:hover {
+    border-color: var(--primary-color);
+  }
+
+  /*switch*/
+  .ivu-switch-checked {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+
+
+  /*button*/
+  .searchBtn {
+    background: var(--primary-color);
+    .focusActive()
+  }
+
+  .searchresetBtn {
+    &:hover {
+      border-color: var(--primary-color);
+    }
+
+    .focusActive()
+  }
+
+  .btn-outline-info {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important
+  }
+
+  .btn-outline-info:not(.dropdown-item):hover,
+  .btn-outline-info:not(.dropdown-item):active {
+    background: var(--primary-color) !important;
+    color: #fff !important
+  }
+
+  .ivu-btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    .focusActive();
+
+    &:hover {
+      background: var(--primary-color-hover);
+      border-color: var(--primary-color-hover);
+    }
+
+    &[disabled] {
+      background: var(--primary-color-disabled);
+      border-color: var(--primary-color-disabled);
+      color: #fff;
+
+      &:hover {
+        background: var(--primary-color-disabled);
+        border-color: var(--primary-color-disabled);
+        color: #fff;
+      }
+    }
+  }
+
+  .ivu-btn-default {
+    &:hover {
+      border-color: var(--primary-color)
+    }
+
+    .focusActive()
+  }
+
+  .ivu-btn-group:not(.ivu-btn-group-vertical) .ivu-btn-primary:first-child:not(:last-child) {
+    border-right-color: var(--primary-color)
+  }
+
+  .ivu-btn-group:not(.ivu-btn-group-vertical) .ivu-btn-primary:last-child:not(:first-child),
+  .ivu-btn-group:not(.ivu-btn-group-vertical) .ivu-btn-primary+.ivu-btn {
+    border-left-color: var(--primary-color)
+  }
+
+  /*radio*/
+  .ivu-radio-checked {
+    .ivu-radio-inner {
+      border-color: var(--primary-color);
+
+      &:after {
+        background-color: var(--primary-color)
+      }
+    }
+  }
+
+  /*table*/
+  .ivu-table-row-highlight td {
+    background: @boxHoverColor;
+    box-shadow: 0px -1px 0px 0px #ECEEF0;
+  }
+
+  .ivu-table-row-highlight td,
+  .ivu-table-stripe {
+
+    .ivu-table-body,
+    .ivu-table-fixed-body {
+
+      tr.ivu-table-row-hover,
+      tr.ivu-table-row-highlight.ivu-table-row-hover,
+      tr.ivu-table-row-highlight:nth-child(2n) {
+        td {
+          background: @boxHoverColor;
+          box-shadow: 0px -1px 0px 0px #ECEEF0;
+        }
+      }
+    }
+  }
+
+  /*vxe-table*/
+  .vxe-table--render-default {
+    .vxe-body--row.row--hover {
+      background: @boxHoverColor;
+      box-shadow: 0px -1px 0px 0px #ECEEF0;
+
+      &.row--stripe {
+        background: @boxHoverColor;
+        box-shadow: 0px -1px 0px 0px #ECEEF0;
+      }
+    }
+  }
+
+  /*page*/
+  .ivu-page.mini {
+
+    .ivu-page-prev,
+    .ivu-page-next {
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+    }
+
+    .ivu-page-item {
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+
+      &:hover {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+
+        a {
+          color: var(--primary-color)
+        }
+      }
+
+      a:hover {
+        color: var(--primary-color)
+      }
+    }
+
+    .ivu-page-item-active {
+      border: 1px solid var(--primary-color) !important;
+      background: var(--primary-color);
+
+      &:hover,
+      a:hover {
+        color: #fff
+      }
+    }
+
+    .ivu-page-options-elevator {
+      input:hover {
+        border-color: var(--primary-color);
+      }
+
+      input:focus {
+        border-color: var(--primary-color);
+        .primaryBoxShadow()
+      }
+    }
+  }
+
+  /*select*/
+  .ivu-select-visible {
+    .ivu-select-selection {
+      border-color: var(--primary-color);
+      .primaryBoxShadow()
+    }
+  }
+
+  .ivu-select-item-selected,
+  .ivu-select-item-selected:hover {
+    color: var(--primary-color);
+  }
+
+  .ivu-select-item:hover,
+  .ivu-select-item-focus {
+    background: @boxHoverColor;
+  }
+
+  .ivu-select-selection:hover,
+  .ivu-select-selection-focused {
+    border-color: var(--primary-color);
+  }
+
+  .ivu-select-multiple {
+    .ivu-select-item-selected:after {
+      color: var(--primary-color)
+    }
+
+    .ivu-select-item-focus,
+    .ivu-select-item-selected:hover {
+      background: @boxHoverColor;
+    }
+  }
+
+  /*vxe-table*/
+  .is--checked,
+  .is--indeterminate {
+
+    &.vxe-custom--option,
+    &.vxe-export--panel-column-option,
+    &.vxe-table--filter-option {
+      .vxe-checkbox--icon {
+
+        &:before,
+        &:hover {
+          border-color: var(--primary-color);
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .vxe-table--render-default {
+
+    .vxe-cell--checkbox:not(.is--disabled) {
+      &:hover {
+        .vxe-checkbox--icon {
+          &:before {
+            border-color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    .is--checked,
+    .is--indeterminate {
+
+      &.vxe-cell--checkbox:not(.is--disabled) {
+
+        &,
+        &:hover {
+          .vxe-checkbox--icon {
+            &:before {
+              border-color: var(--primary-color);
+              background-color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*iview tree 选中*/
+  .ivu-checkbox-checked,
+  .ivu-checkbox-checked:hover,
+  .ivu-checkbox-indeterminate,
+  .ivu-checkbox-indeterminate:hover {
+    .ivu-checkbox-inner {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+    }
+  }
+
+  .ivu-checkbox-focus {
+    .primaryBoxShadow()
+  }
+
+  .bagcolor,
+  .introdom:hover {
+    background: @boxHoverColor
+  }
+
+  .icontypecolor {
+    color: var(--primary-color);
+  }
+
+  /*ztree*/
+  .ztree {
+    .curSelectedNode {
+      .node_name {
+        background-color: @boxHoverColor;
+
+        &:hover {
+          background-color: @boxHoverColor;
+        }
+      }
+    }
+
+    li {
+      .node_name {
+        &:hover {
+          background-color: @boxHoverColor;
+        }
+      }
+
+      a {
+
+        &:hover,
+        &.curSelectedNode {
+          background-color: @boxHoverColor  !important
+        }
+      }
+
+      span {
+        &.button {
+          color: var(--primary-color)
+        }
+      }
+    }
+  }
+
+  .ivu-tree-title {
+    &:hover {
+      background: @boxHoverColor
+    }
+
+    &-selected {
+
+      &,
+      &:hover {
+        background: @boxHoverColor
+      }
+    }
+  }
+
+  /*日期选择*/
+  .ivu-date-picker-focused input {
+    border-color: var(--primary-color);
+    .primaryBoxShadow()
+  }
+
+  .ivu-date-picker-cells-cell-today em:after {
+    background: var(--primary-color);
+  }
+
+  .ivu-date-picker-cells-cell:hover em {
+    background: @boxHoverColor;
+  }
+
+  .ivu-date-picker-cells-focused em {
+    -webkit-box-shadow: 0 0 0 1px var(--primary-color) inset;
+    box-shadow: 0 0 0 1px var(--primary-color) inset;
+  }
+
+  .ivu-date-picker-cells-cell-selected {
+
+    em,
+    &:hover em {
+      background: var(--primary-color);
+      box-shadow: 0 0 0 1px var(--primary-color) inset;
+    }
+  }
+
+  .ivu-picker-panel-icon-btn:hover i {
+    color: var(--primary-color)
+  }
+
+  .ivu-date-picker-header-label:hover {
+    color: var(--primary-color)
+  }
+
+  .ivu-date-picker-cells-year .ivu-date-picker-cells-cell-focused,
+  .ivu-date-picker-cells-month .ivu-date-picker-cells-cell-focused {
+    background-color: @boxHoverColor;
+  }
+
+  /*tab*/
+  .ivu-tabs-ink-bar {
+    background: var(--primary-color);
+  }
+
+  /*tagsView*/
+  .tags-view-container {
+    .tags-view-wrapper {
+      .tags-view-item {
+        &.active {
+          color: var(--primary-color);
+
+          .ivu-icon-ios-close {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  /*cascader*/
+  .ivu-cascader-menu {
+    .ivu-cascader-menu-item:hover {
+      background: @boxHoverColor;
+    }
+
+    .ivu-cascader-menu-item-active {
+      color: inherit;
+      background: @boxHoverColor;
+    }
+  }
+
+  /*主题切换*/
+  .theme-switch {
+    .theme-switch-list {
+      &>div {
+
+        &:hover,
+        &.active {
+          background: @boxHoverColor
+        }
+      }
+    }
+  }
+
+  /*个人设置下拉*/
+  .dropdown-item:focus,
+  .dropdown-item:hover,
+  .dropdown-item:active {
+    background: @boxHoverColor
+  }
+
+  /*头像上传背景*/
+  /*列表*/
+  .user-listcon,
+  .userlistcon {
+    &>ul {
+      &>li {
+        background: @boxHoverColor;
+      }
+    }
+  }
+
+  .indicator-list,
+  .role-list,
+  .tenancy-list,
+  .task-list,
+  .user-listcon,
+  .modeltreecon,
+  .funcnodecon {
+    &>ul {
+      &>li {
+
+        &:hover,
+        &.active {
+          background: @boxHoverColor  !important;
+        }
+      }
+    }
+  }
+
+  .processConfig {
+    .activeli {
+      background: @boxHoverColor;
+    }
+
+    .p-center,
+    .p-right {
+      ul {
+        li {
+          &:hover {
+            background: @boxHoverColor;
+          }
+        }
+      }
+    }
+  }
+
+  /*timeline*/
+  .ivu-timeline {
+    &-item {
+      &-head-blue {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  /*公司管理-申报信息tab*/
+  .declare {
+    .tabtit {
+      background: var(--primary-color);
+    }
+  }
+
+  /*auchor*/
+  .ivu-anchor-link {
+    &-active {
+      border-color: var(--primary-color)
+    }
+  }
+
+  /*step*/
+  .ivu-steps-item.ivu-steps-status-process .ivu-steps-head-inner {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+  }
+
+  .ivu-steps-item.ivu-steps-status-finish .ivu-steps-head-inner {
+    border-color: var(--primary-color);
+  }
+
+  .ivu-steps-item.ivu-steps-status-finish .ivu-steps-head-inner>.ivu-steps-icon,
+  .ivu-steps-item.ivu-steps-status-finish .ivu-steps-head-inner span {
+    color: var(--primary-color);
+  }
+
+  .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail>i:after {
+    background-color: var(--primary-color);
+  }
+
+  .ivu-steps-status-finish {
+    .ivu-steps-title {
+      font-size: 14px;
+      color: var(--primary-color);
+    }
+  }
+
+  .ivu-steps-status-process {
+    .ivu-steps-title {
+      font-size: 14px;
+      color: var(--primary-color);
+    }
+  }
+
+  .risk-config-item {
+    margin: 0px 0px 20px 0px;
+
+    .risk-title {
+      font-size: 14px;
+      color: #596778;
+      font-weight: 500;
+      padding: 0px 0px 0px 10px;
+      height: 20px;
+      margin: 0px 0px 10px 0px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 0px;
+        width: 3px;
+        height: 12px;
+        background: var(--primary-color);
+
+      }
+    }
+
+    >.risk-content-box {
+      padding: 0px 0px 0px 10px;
+    }
+
+    .risk-btns-item {
+      cursor: pointer;
+      display: inline-block;
+      min-width: 68px;
+      height: 28px;
+      line-height: 27px;
+      padding: 0px 8px;
+      text-align: center;
+      background: #f5f5f5;
+      border-radius: 2px;
+      border: 1px solid #dadde1;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .risk-btns-active {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .select-btn-active {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      background: @boxHoverColor;
+    }
+
+  }
+
+  .risk-color-primary {
+    color: var(--primary-color);
+  }
+
+  .risk-bg-primary {
+    background: var(--primary-color);
+  }
+
+  .risk-border-primary {
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  /*.ivu-search-wrapper*/
+  .ivu-search-wrapper {
+    .legend {
+      // color: var(--primary-color) !important;
+    }
+
+    .focus {
+      color: var(--primary-color) !important;
+    }
+  }
+
+  // vxe-grid
+  .vxe-table--render-default .is--checked.vxe-cell--radio .vxe-radio--icon {
+    color: var(--primary-color);
+  }
+
+  .vxe-table--render-default.size--small .vxe-radio--icon:hover {
+    color: var(--primary-color);
+  }
+}
+
+.menuSearch() {
+
+  /*menu*/
+  .ivu-menu {
+    background: var(--bg-main);
+
+    b,
+    i {
+      color: var(--text-color-secondary);
+    }
+
+    .ivu-menu-item-active {
+      &:not(.ivu-menu-submenu) {
+        background: var(--primary-color-light);
+
+        &:after {
+          display: none !important;
+        }
+
+        b,
+        i {
+          color: var(--primary-color)
+        }
+      }
+
+      .ivu-menu-submenu-title {
+
+        b,
+        i {
+          color: var(--text-color-main);
+        }
+
+      }
+    }
+
+
+
+    .ivu-menu-item-selected {
+      color: var(--primary-color) !important;
+    }
+
+    .ivu-menu-item {
+      color: var(--text-color-secondary);
+    }
+
+    &-item,
+    &-submenu-title {
+      color: var(--text-color-secondary);
+
+      &-active:not(.ivu-menu-submenu),
+      &-active:not(.ivu-menu-submenu):hover {
+        background: var(--primary-color-light) !important;
+
+        &.ivu-menu-opened {
+          background: var(--primary-color-light) !important;
+        }
+      }
+
+      &:hover {
+        background: var(--bg-secondary) !important;
+      }
+    }
+
+    // .ivu-menu-item,
+    // .ivu-menu-submenu-title {
+    //   padding: 7.5px 18px;
+    // }
+  }
+
+  .app-aside {
+    background: var(--bg-main);
+
+    .menu_kw {
+      color: var(--primary-color)
+    }
+
+    .app_aside_search {
+      .ivu-input-prefix {
+        i {
+          color: var(--text-color-placeholder);
+        }
+      }
+
+      // input
+      .ivu-input {
+        color: var(--text-color-secondary);
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      // placeholder
+      .ivu-input::placeholder {
+        color: var(--text-color-placeholder);
+      }
+
+      .ivu-input:focus {
+        color: var(--text-color-secondary);
+        border-bottom: 1px solid var(--primary-color);
+
+        &::placeholder {
+          color: var(--text-color-placeholder);
+        }
+      }
+    }
+
+    .app_aside_search_focus {
+      .ivu-input-prefix {
+        i {
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+  }
+}

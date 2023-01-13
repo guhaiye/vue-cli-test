@@ -31,7 +31,7 @@
             getBreadcrumb() {
                 let _arr = this.newbar
                 const {id} = this.$route.meta
-                this.breadCrumbList = jsonFIndParent(id,_arr)
+                this.breadCrumbList = jsonFindParent(id,_arr)
             }
         }
     }

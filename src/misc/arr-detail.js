@@ -39,23 +39,24 @@ export function recursionArr(arr,objkey,compareKey,code){
  * {params} path  : 形成的层级数组 
  * description    : json树递归，根据子code去查找所有父code，用户获取面包屑的层级
  */
-export function  jsonFIndParent(id,arr,path){
-   if(path === undefined){
-       path = []
-   }
-   for(let i=0;i<arr.length;i++){
-       let tempPath = path.concat();
-       tempPath.push(arr[i]['title'])
-    //    console.log(tempPath,arr[i]['id'],id)
-
-       if(arr[i]['id'] == id){
-           return tempPath
-       }
-       if(arr[i].children){
-           let result = jsonFIndParent(id,arr[i].children,tempPath)
-           if(!!result){
-               return result
-           }
-       }
-   }
+export function jsonFindParent(id, arr, pathlink) {
+    if (pathlink === undefined) {
+        pathlink = []
+    }
+    for (let i = 0; i < arr.length; i++) {
+        let tempPath = pathlink.concat();
+        let { title, path, parentId, nodetype, component } = arr[i];
+        const { isbtn } = arr[i].meta
+        path = (title == '首页') ? '/' : path
+        tempPath.push({ title, path, parentId, nodetype, component, isbtn })
+        if (arr[i]['id'] == id) {
+            return tempPath
+        }
+        if (arr[i].children) {
+            let result = jsonFindParent(id, arr[i].children, tempPath)
+            if (!!result) {
+                return result
+            }
+        }
+    }
 }

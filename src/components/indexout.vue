@@ -16,8 +16,8 @@
 <script>
 import AppHeader from './partials/app.header.vue'
 import AppAside from './partials/app.aside.vue'
-import { getQueryString,logout} from '@/misc/root-common'
 import { mapState,mapActions } from 'vuex'
+import { initTheme } from '../../new-theme/theme'
 
 import { USER_SIGNIN } from '../store/user'
 import { SET_ROUTERS,SET_ROUTERSOUT,OUT_ROUTERS } from '../store/menu'
@@ -74,7 +74,7 @@ export default {
                 'id':syschildren[i].id,
                 'funccode':syschildren[i].code,
                 'component':syschildren[i].component_url,
-                'path': path,
+                'path': '/cas' + path,
                 'showcode':syschildren[i].show_code,
                 'nodetype':syschildren[i].node_type,
                 'icon':syschildren[i].icon_url,
@@ -201,26 +201,6 @@ export default {
        }else{
          this.$router.push(this.linkurl);
        }
-      
-      // var asyncRouterMap = [];
-      // var systemmenu = {};
-      // systemmenu['path'] = '/indexout';
-      // systemmenu['component'] = "indexout";
-      // systemmenu['children'] = [];
-      // var urllink = this.linkurl;
-      // var comlink = this.componenturl;
-      // systemmenu['children'].push({
-      //     'title':'嵌入',
-      //     'component':comlink,
-      //     'path':urllink,
-      //     'children':[],
-      // });
-      // asyncRouterMap.push(systemmenu);
-      // var routers = [];
-      // this.SET_ROUTERS(asyncRouterMap);
-      // MenuUtils(routers,asyncRouterMap);
-      // this.$router.addRoutes(routers);
-      // this.$router.push(urllink);
     },
     setTheme(theme,edata){
       if(theme === undefined){
@@ -228,15 +208,18 @@ export default {
       }else{
         var themenew = theme
       }
-      localStorage.setItem('theme', themenew);
-      this.theme = themenew;
+      var userinfo = edata.userinfo
+      this.USER_SIGNIN(userinfo)
+      localStorage.setItem('theme', themenew)
+      if (edata.themeColor && edata.themeMode) {
+        initTheme(edata.themeColor, edata.themeMode)
+      }
+      this.theme = themenew
       if (!!this.theme) {
         document.getElementById('body_app').className = this.theme
       } else {
         document.getElementById('body_app').className = 'theme1'
       }
-      var userinfo = edata.userinfo;
-      this.USER_SIGNIN(userinfo);
     },
     detailRedirect(type,edata){
       var state = this.$route.query.state;

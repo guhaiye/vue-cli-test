@@ -1,4 +1,3 @@
-import Vue from 'vue'
 // export const Set_LoadNode = 'Set_LoadNode' //登录成功
 // export const Out_LoadNode = 'Out_LoadNode' //退出登录
 

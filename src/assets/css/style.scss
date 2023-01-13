@@ -25,6 +25,18 @@ input:-webkit-autofill {-webkit-box-shadow: 0 0 0 500px white inset}
 .thin-scroll::-webkit-scrollbar {width: 8px;height:8px;}
 button+button{margin-left:10px;}
 .ivu-transfer-operation button+button{margin-left:0px;}
+.ivu-transfer-tree-operation{
+  button+button{margin-left:0px;}
+  .ivu-btn-small{
+    padding: 0px 8px;
+    display: flex;
+    align-items: center;
+    i{
+      margin-right: 0px;
+    }
+  }
+}
+
 .ivu-page-options-sizer{min-width:110px;}
 .ivu-radio{line-height:1.5}
 .ivu-select-multiple .ivu-tag{height:23px;}

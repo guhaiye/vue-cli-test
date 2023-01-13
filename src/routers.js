@@ -1,8 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import store from '@/store/'
 import MenuUtils from '@/misc/MenuUtils.js'
 import { logout } from '@/misc/root-common'
+import store from '@/store/'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return routerPush.call(this, location).catch(err => err)
+}
+const originalReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace (location) {
+  return originalReplace.call(this, location).catch(err => err)
+}
 Vue.use(VueRouter)
 
 

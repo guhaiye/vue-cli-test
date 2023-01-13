@@ -829,3 +829,35 @@ export function getSearchField(condition,form) {
     let conarr = searchFieldFormat(arr, searchfiled);
     return conarr;
 }
+
+export const throttle = (fn, delay = 1000) => {
+  //距离上一次的执行时间
+  let lastTime = 0
+  return function () {
+    let _this = this
+    let _arguments = arguments
+    let now = new Date().getTime()
+    //如果距离上一次执行超过了delay才能再次执行
+    if (now - lastTime > delay) {
+      fn.apply(_this, _arguments)
+      lastTime = now
+    }
+  }
+}
+
+export const debounce =  (func, delay = 1000, immediate = false) => {
+  //闭包
+  let timer = null
+  //不能用箭头函数
+  return function () {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    if (immediate && !timer) {
+      func.apply(this, arguments)
+    }
+    timer = setTimeout(() => {
+      func.apply(this, arguments)
+    }, delay)
+  }
+}

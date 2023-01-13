@@ -16,7 +16,7 @@
     }
   },
   "plugins":[["import",{
-    "libraryName":"view-design",
+    "libraryName":"szyh-view-ui",
     "libraryDirectory":"src/components"
   }]]
 }

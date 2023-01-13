@@ -1,21 +1,21 @@
 import Vue from 'vue'
-import 'xe-utils'
 import {
-  VXETable,
-  Table,
   Column,
-  Header,
-  Footer,
-  Filter,
   Edit,
-  Menu,
   Export,
-  Keyboard,
-  Validator,
+  Filter,
+  Footer,
   Form,
+  Grid,
+  Header,
+  Keyboard,
+  Menu,
+  Table,
   Tooltip,
-  Grid
+  Validator,
+  VXETable
 } from 'vxe-table'
+import 'xe-utils'
 
 // 表格模块
 Vue.use(Header)
